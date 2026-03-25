@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#12342d"/>
+      <stop offset="100%" stop-color="#245248"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <rect x="30" y="30" width="1140" height="740" rx="36" fill="none" stroke="#8fc9c5" stroke-width="4" opacity="0.5"/>
+  <text x="600" y="380" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="72" fill="#f2f1e9" font-weight="700">Маршрут</text>
+  <text x="600" y="470" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="60" fill="#b9c7c2">по парку</text>
+</svg>
