@@ -20,7 +20,6 @@ prisma/dev.db
 
 # uploads and data
 public/uploads
-uploads
 data
 
 # debug logs
