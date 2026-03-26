@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import {
-  getAdminCookieName,
-  verifyAdminSessionValue,
-} from "@/lib/admin-auth";
+
+const COOKIE_NAME = "museum_admin_session";
 
 export function middleware(req: NextRequest) {
   const pathname = req.nextUrl.pathname;
@@ -14,14 +12,13 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  const cookieValue = req.cookies.get(getAdminCookieName())?.value;
-  const isAuthorized = verifyAdminSessionValue(cookieValue);
+  const hasCookie = Boolean(req.cookies.get(COOKIE_NAME)?.value);
 
-  if (!isAuthorized && !isLoginRoute) {
+  if (!hasCookie && !isLoginRoute) {
     return NextResponse.redirect(new URL("/admin/login", req.url));
   }
 
-  if (isAuthorized && isLoginRoute) {
+  if (hasCookie && isLoginRoute) {
     return NextResponse.redirect(new URL("/admin", req.url));
   }
 

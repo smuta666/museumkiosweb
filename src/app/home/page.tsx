@@ -2,6 +2,8 @@ import { BannerSlider } from "@/components/banner-slider";
 import { SectionCard } from "@/components/section-card";
 import { getBootstrapContent } from "@/lib/content";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const data = await getBootstrapContent();
 
