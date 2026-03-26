@@ -2,6 +2,8 @@ import { format } from "date-fns";
 import { ru } from "date-fns/locale";
 import { getBootstrapContent } from "@/lib/content";
 
+export const dynamic = "force-dynamic";
+
 export default async function EventsPage() {
   const data = await getBootstrapContent();
 
