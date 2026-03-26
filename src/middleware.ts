@@ -1,13 +1,33 @@
+import { NextRequest, NextResponse } from "next/server";
+import {
+  getAdminCookieName,
+  verifyAdminSessionValue,
+} from "@/lib/admin-auth";
 
-import { NextResponse } from "next/server";
+export function middleware(req: NextRequest) {
+  const pathname = req.nextUrl.pathname;
 
-export function middleware(req){
-  if(req.nextUrl.pathname.startsWith("/admin") && !req.nextUrl.pathname.includes("login")){
-    if(req.cookies.get("admin")?.value!=="yes"){
-      return NextResponse.redirect(new URL("/admin/login",req.url));
-    }
+  const isAdminRoute = pathname.startsWith("/admin");
+  const isLoginRoute = pathname.startsWith("/admin/login");
+
+  if (!isAdminRoute) {
+    return NextResponse.next();
   }
+
+  const cookieValue = req.cookies.get(getAdminCookieName())?.value;
+  const isAuthorized = verifyAdminSessionValue(cookieValue);
+
+  if (!isAuthorized && !isLoginRoute) {
+    return NextResponse.redirect(new URL("/admin/login", req.url));
+  }
+
+  if (isAuthorized && isLoginRoute) {
+    return NextResponse.redirect(new URL("/admin", req.url));
+  }
+
   return NextResponse.next();
 }
 
-export const config={matcher:["/admin/:path*"]};
+export const config = {
+  matcher: ["/admin/:path*"],
+};
