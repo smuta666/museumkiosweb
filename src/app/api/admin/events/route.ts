@@ -40,7 +40,7 @@ export async function POST(req: Request) {
 
       await mkdir(path.dirname(filePath), { recursive: true });
       await writeFile(filePath, buffer);
-      imageUrl = `/uploads/${safeFileName}`;
+      imageUrl = `/api/uploads/${safeFileName}`;
     }
 
     const event = await prisma.event.create({

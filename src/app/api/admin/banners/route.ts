@@ -39,7 +39,7 @@ export async function POST(req: Request) {
     const banner = await prisma.banner.create({
       data: {
         title,
-        imageUrl: `/uploads/${safeFileName}`,
+        imageUrl: `/api/uploads/${safeFileName}`,
       },
     });
 
