@@ -29,7 +29,9 @@ export async function POST(req: Request) {
     const buffer = Buffer.from(bytes);
 
     const safeFileName = `${Date.now()}-${file.name.replace(/\\s+/g, "-")}`;
-    const filePath = path.join(process.cwd(), "public", "uploads", safeFileName);
+    const uploadDir = process.env.UPLOAD_DIR || "public/uploads";
+
+    const filePath = path.join(process.cwd(), uploadDir, safeFileName);
 
     await writeFile(filePath, buffer);
 
