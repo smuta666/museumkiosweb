@@ -1,6 +1,13 @@
+meta:
+  environment : node
+  toolchain:
+    name: npm
+    version: 20
+
 build:
-  dockerfile: Dockerfile
+  additionalCommands: npm run builds
 
 run:
-  persistenceMount: /data
+  command: npm run start
   containerPort: 3000
+  persistenceMount: /data
