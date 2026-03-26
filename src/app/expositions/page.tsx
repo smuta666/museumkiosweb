@@ -4,27 +4,27 @@ const expositions = [
   {
     title: "Парадные залы",
     description: "Исторические интерьеры главного корпуса дворца, сохранившие атмосферу XIX века.",
-    image: "/static/expositions/paradnye-zaly.svg",
+    image: "/static/expositions/paradnye-zaly.jpg",
   },
   {
     title: "Воронцовская кухня",
     description: "Пространство, знакомящее посетителей с бытом дворцовой кухни и хозяйственной частью комплекса.",
-    image: "/static/expositions/kuhnya.svg",
+    image: "/static/expositions/kuhnya.jpg",
   },
   {
     title: "Квартира дворецкого",
     description: "Экспозиция, раскрывающая повседневную жизнь и организацию службы во дворце.",
-    image: "/static/expositions/dvoreckiy.svg",
+    image: "/static/expositions/dvoreckiy.jpg",
   },
   {
     title: "Художественная галерея",
     description: "Произведения искусства и выставочные материалы, связанные с историей дворца и его эпохой.",
-    image: "/static/expositions/gallery.svg",
+    image: "/static/expositions/gallery.jpg",
   },
   {
     title: "Выставочный зал",
     description: "Пространство для временных выставок, музейных проектов и тематических экспозиций.",
-    image: "/static/expositions/exhibition-hall.svg",
+    image: "/static/expositions/exhibition-hall.jpg",
   },
 ];
 

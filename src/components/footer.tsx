@@ -16,7 +16,7 @@ export function Footer() {
     <footer className="border-t border-[#2c5a4d] bg-[#071a17]/95 px-8 py-6 backdrop-blur-xl lg:px-12">
       <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex items-center gap-4">
-          <img src="/static/logo.svg" alt="Логотип музея" className="h-16 w-auto" />
+          <img src="/static/logo.png" alt="Логотип музея" className="h-16 w-auto" />
           <div>
             <div className="text-lg font-semibold text-[#f2f1e9]">
               Алупкинский дворцово-парковый
@@ -28,7 +28,7 @@ export function Footer() {
         <div className="flex gap-8">
           <div className="text-center">
             <img
-              src="/static/qr-review.svg"
+              src="/static/qr-review.png"
               alt="Оценка услуг"
               className="h-28 w-28 rounded-lg border border-[#3d6c5d] bg-white p-2"
             />
@@ -36,7 +36,7 @@ export function Footer() {
           </div>
           <div className="text-center">
             <img
-              src="/static/qr-site.svg"
+              src="/static/qr-site.png"
               alt="Сайт музея"
               className="h-28 w-28 rounded-lg border border-[#3d6c5d] bg-white p-2"
             />
@@ -58,19 +58,19 @@ export function Footer() {
 
           <div className="flex items-center gap-4">
             <button
-              onClick={() => setQr("/static/qr/qr-max.svg")}
+              onClick={() => setQr("/static/qr/qr-max.png")}
               className="flex h-12 w-24 items-center justify-center rounded-xl border border-[#3d6c5d] bg-[#0c2a24] text-[#e8dcc7] transition hover:border-[#4fc3b3] hover:bg-[#12342d]"
             >
               MAX
             </button>
             <button
-              onClick={() => setQr("/static/qr/qr-vk.svg")}
+              onClick={() => setQr("/static/qr/qr-vk.png")}
               className="flex h-12 w-24 items-center justify-center rounded-xl border border-[#3d6c5d] bg-[#0c2a24] text-[#e8dcc7] transition hover:border-[#4fc3b3] hover:bg-[#12342d]"
             >
               VK
             </button>
             <button
-              onClick={() => setQr("/static/qr/qr-rutube.svg")}
+              onClick={() => setQr("/static/qr/qr-rutube.png")}
               className="flex h-12 w-24 items-center justify-center rounded-xl border border-[#3d6c5d] bg-[#0c2a24] text-[#e8dcc7] transition hover:border-[#4fc3b3] hover:bg-[#12342d]"
             >
               RuTube
