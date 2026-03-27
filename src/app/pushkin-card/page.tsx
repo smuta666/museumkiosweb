@@ -27,7 +27,7 @@ export default function PushkinCardPage() {
         <div className="flex flex-col items-center justify-center rounded-[32px] border border-[#2c5a4d] bg-[#0c2a24]/95 p-8 shadow-[0_25px_60px_rgba(0,0,0,0.28)]">
           <div className="mb-5 text-center text-sm uppercase tracking-[0.3em] text-[#8fc9c5]">Сканируйте QR-код</div>
           <img
-            src="/static/qr/pushkin-card-qr.svg"
+            src="/static/qr/pushkin-card-qr.png"
             alt="QR-код Пушкинская карта"
             className="h-72 w-72 rounded-2xl border border-[#3d6c5d] bg-white p-3 shadow-[0_20px_40px_rgba(0,0,0,0.25)]"
           />

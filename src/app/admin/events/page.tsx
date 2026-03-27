@@ -290,11 +290,11 @@ export default function AdminEventsPage() {
                 className="overflow-hidden rounded-[26px] border border-[rgba(124,201,183,0.18)] bg-[rgba(255,255,255,0.03)] shadow-[0_18px_40px_rgba(0,0,0,0.18)]"
               >
                 {event.imageUrl ? (
-                  <div className="relative aspect-[16/8] w-full bg-[rgba(3,20,17,0.7)]">
+                  <div className="flex h-[320px] items-center justify-center overflow-hidden rounded-[24px] bg-[rgba(0,0,0,0.18)] p-3">
                     <img
                       src={event.imageUrl}
                       alt={event.title}
-                      className="h-full w-full object-cover"
+                      className="max-h-full max-w-full rounded-[18px] object-contain"
                     />
                   </div>
                 ) : null}
