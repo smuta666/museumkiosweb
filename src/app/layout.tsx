@@ -14,13 +14,15 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ru">
-      <body>
-        <div className="kiosk-shell">
+      <body className="min-h-screen">
+        <div className="kiosk-shell flex min-h-screen flex-col">
           <ScrollToTop />
           <Header />
-          <div className="kiosk-container py-8">
-            <main>{children}</main>
+
+          <div className="kiosk-container flex-1 py-8">
+            <main className="flex h-full flex-col">{children}</main>
           </div>
+
           <Footer />
         </div>
       </body>
