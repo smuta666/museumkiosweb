@@ -56,16 +56,15 @@ export default async function HomePage() {
       gradient:
         "bg-[linear-gradient(135deg,rgba(33,102,92,0.96),rgba(49,133,120,0.92))]",
     },
+    {
+      href: "/pushkin-card",
+      title: "Пушкинская карта",
+      subtitle: "Информация и быстрый переход по QR-коду",
+      caption: "Раздел",
+      gradient:
+        "bg-[linear-gradient(135deg,rgba(33,102,92,0.96),rgba(49,133,120,0.92))]",
+    },
   ];
-
-  const pushkinCard = {
-    href: "/pushkin-card",
-    title: "Пушкинская карта",
-    subtitle: "Информация и быстрый переход по QR-коду",
-    caption: "Раздел",
-    gradient:
-      "bg-[linear-gradient(135deg,rgba(33,102,92,0.96),rgba(49,133,120,0.92))]",
-  };
 
   return (
     <div className="flex flex-col gap-10">
@@ -91,12 +90,6 @@ export default async function HomePage() {
         {mainCards.map((card) => (
           <SectionCard key={card.href} {...card} />
         ))}
-      </section>
-
-      <section className="grid grid-cols-1 gap-6 xl:grid-cols-3">
-        <div className="xl:col-span-1">
-          <SectionCard {...pushkinCard} />
-        </div>
       </section>
     </div>
   );
