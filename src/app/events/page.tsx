@@ -31,7 +31,7 @@ export default async function EventsPage() {
           >
             {/* КАРТИНКА */}
             {item.imageUrl ? (
-              <div className="flex h-[260px] items-center justify-center overflow-hidden bg-gradient-to-br from-[#12342d] to-[#0c2a24] p-4">
+              <div className="flex h-[560px] items-center justify-center overflow-hidden bg-gradient-to-br from-[#12342d] to-[#0c2a24] p-4">
                 <img
                   src={item.imageUrl}
                   alt={item.title}
