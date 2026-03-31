@@ -3,10 +3,17 @@ import "./globals.css";
 import Header from "../components/Header";
 import { Footer } from "../components/footer";
 import ScrollToTop from "../components/ScrollToTop";
+import KioskLock from "../components/KioskLock";
 
 export const metadata: Metadata = {
   title: "Museum Kiosk Web",
   description: "Облачный музейный киоск и единый web-интерфейс",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
 };
 
 export default function RootLayout({
@@ -15,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className="min-h-screen">
+        <KioskLock />
         <div className="kiosk-shell flex min-h-screen flex-col">
           <ScrollToTop />
           <Header />

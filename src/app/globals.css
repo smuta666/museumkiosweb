@@ -17,12 +17,26 @@
 }
 
 html,
+body,
+* {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+img {
+  pointer-events: none;
+}
+
+html,
 body {
   min-height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  touch-action: manipulation;
+  overscroll-behavior: none;
 }
 
 html::-webkit-scrollbar,
