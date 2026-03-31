@@ -1,5 +1,8 @@
 "use client";
 
+import { useEffect } from "react";
+import { openGlobalModal, closeGlobalModal } from "@/lib/modal-state";
+
 type ExpositionItem = {
   id: string;
   title: string;
@@ -16,9 +19,14 @@ export default function ExpositionsModal({
   item: ExpositionItem;
   onClose: () => void;
 }) {
+  useEffect(() => {
+    openGlobalModal();
+    return () => closeGlobalModal();
+  }, []);
+
   return (
     <div
-      className="fixed inset-0 z-[200] flex items-center justify-center bg-black/75 p-6"
+      className="fixed inset-0 z-[300] flex items-center justify-center bg-black/75 p-6"
       onClick={onClose}
     >
       <div
@@ -28,7 +36,7 @@ export default function ExpositionsModal({
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-4 top-4 z-[2] flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-black/40 text-3xl text-white"
+          className="absolute right-4 top-4 z-[301] flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-black/50 text-3xl text-white"
           aria-label="Закрыть"
         >
           ×

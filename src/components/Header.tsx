@@ -51,7 +51,7 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className="kiosk-divider fixed left-0 right-0 top-0 z-30 bg-[rgba(3,20,17,0.94)] backdrop-blur-xl"
+      className="kiosk-header kiosk-divider fixed left-0 right-0 top-0 z-30 bg-[rgba(3,20,17,0.94)] backdrop-blur-xl"
     >
       <div className="kiosk-container flex items-center justify-between gap-8 py-6">
         <div>

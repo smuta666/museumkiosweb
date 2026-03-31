@@ -205,3 +205,15 @@ a {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+body[data-modal-open="true"] .kiosk-header {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+}
+
+.kiosk-header {
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
