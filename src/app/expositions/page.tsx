@@ -11,7 +11,7 @@ export default async function ExpositionsPage() {
       fullDescription:
         "Исторические интерьеры главного корпуса дворца, сохранившие атмосферу XIX века. Экспозиция знакомит посетителей с оформлением парадных помещений, мебелью, декоративными элементами и атмосферой эпохи.",
       price: "500 ₽",
-      imageUrl: "../public/static/expositions/exhibition-hall.jpg",
+      imageUrl: "/static/expositions/exhibition-hall.jpg",
     },
     {
       id: "2",
@@ -20,7 +20,7 @@ export default async function ExpositionsPage() {
       fullDescription:
         "Экспозиция рассказывает о повседневной жизни дворцовой кухни и хозяйственной части комплекса. Посетители могут увидеть предметы быта, кухонную утварь и особенности организации работы службы дворца.",
       price: "400 ₽",
-      imageUrl: "../public/static/expositions/kuhnya.jpg",
+      imageUrl: "/static/expositions/kuhnya.jpg",
     },
     {
       id: "3",
@@ -30,7 +30,7 @@ export default async function ExpositionsPage() {
       fullDescription:
         "Экспозиция показывает, как была устроена служебная жизнь дворца, какие обязанности были у персонала и как выглядели жилые помещения служащих.",
       price: "350 ₽",
-      imageUrl: "../public/static/expositions/dvoreckiy.jpg",
+      imageUrl: "/static/expositions/dvoreckiy.jpg",
     },
     {
       id: "4",
@@ -40,7 +40,7 @@ export default async function ExpositionsPage() {
       fullDescription:
         "ASD",
       price: "350 ₽",
-      imageUrl: "../public/static/expositions/paradnye-zaly.jpg",
+      imageUrl: "/static/expositions/paradnye-zaly.jpg",
     },
     {
       id: "5",
@@ -50,7 +50,7 @@ export default async function ExpositionsPage() {
       fullDescription:
         "ASD",
       price: "350 ₽",
-      imageUrl: "../public/static/expositions/gallery.jpg",
+      imageUrl: "/static/expositions/gallery.jpg",
     },
   ];
 
