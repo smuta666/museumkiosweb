@@ -35,8 +35,6 @@ body {
   overflow-x: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  touch-action: manipulation;
-  overscroll-behavior: none;
 }
 
 html::-webkit-scrollbar,
@@ -53,6 +51,7 @@ body {
     radial-gradient(circle at 50% 65%, rgba(26, 94, 79, 0.18), transparent 38%),
     linear-gradient(180deg, #042922 0%, #031b17 48%, #021310 100%);
   font-family: Arial, Helvetica, sans-serif;
+  touch-action: pan-y;
 }
 
 * {

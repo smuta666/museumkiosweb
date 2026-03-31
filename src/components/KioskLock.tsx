@@ -4,24 +4,39 @@ import { useEffect } from "react";
 
 export default function KioskLock() {
   useEffect(() => {
-    const prevent = (e: Event) => e.preventDefault();
+    const preventContext = (e: Event) => e.preventDefault();
+    const preventSelect = (e: Event) => e.preventDefault();
 
-    document.addEventListener("contextmenu", prevent);
-    document.addEventListener("selectstart", prevent);
-    document.addEventListener("dragstart", prevent);
-    document.addEventListener("gesturestart", prevent);
-    document.addEventListener("gesturechange", prevent);
-    document.addEventListener("gestureend", prevent);
-    document.addEventListener("touchmove", prevent, { passive: false });
+    const preventMultiTouchZoom = (e: TouchEvent) => {
+      if (e.touches.length > 1) {
+        e.preventDefault();
+      }
+    };
+
+    const preventGesture = (e: Event) => e.preventDefault();
+
+    document.addEventListener("contextmenu", preventContext);
+    document.addEventListener("selectstart", preventSelect);
+    document.addEventListener("dragstart", preventSelect);
+
+    document.addEventListener("touchstart", preventMultiTouchZoom, {
+      passive: false,
+    });
+
+    document.addEventListener("gesturestart", preventGesture);
+    document.addEventListener("gesturechange", preventGesture);
+    document.addEventListener("gestureend", preventGesture);
 
     return () => {
-      document.removeEventListener("contextmenu", prevent);
-      document.removeEventListener("selectstart", prevent);
-      document.removeEventListener("dragstart", prevent);
-      document.removeEventListener("gesturestart", prevent);
-      document.removeEventListener("gesturechange", prevent);
-      document.removeEventListener("gestureend", prevent);
-      document.removeEventListener("touchmove", prevent);
+      document.removeEventListener("contextmenu", preventContext);
+      document.removeEventListener("selectstart", preventSelect);
+      document.removeEventListener("dragstart", preventSelect);
+
+      document.removeEventListener("touchstart", preventMultiTouchZoom);
+
+      document.removeEventListener("gesturestart", preventGesture);
+      document.removeEventListener("gesturechange", preventGesture);
+      document.removeEventListener("gestureend", preventGesture);
     };
   }, []);
 
