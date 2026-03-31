@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { openGlobalModal, closeGlobalModal } from "@/lib/modal-state";
 
 type Banner = {
   id: string;
@@ -45,6 +46,13 @@ export function BannerSlider({ banners }: { banners: Banner[] }) {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isPreviewOpen]);
+
+  useEffect(() => {
+    if (!isPreviewOpen) return;
+
+    openGlobalModal();
+    return () => closeGlobalModal();
   }, [isPreviewOpen]);
 
   if (validBanners.length === 0) {
@@ -109,19 +117,19 @@ export function BannerSlider({ banners }: { banners: Banner[] }) {
                 onClick={() => setIndex(dotIndex)}
                 className={`h-3 rounded-full transition-all ${
                   dotIndex === index
-                    ? "w-12 bg-[#f2f1e9]"
-                    : "w-3 bg-[#6f9f93]/35 hover:bg-[#8fc9c5]/70"
+                    ? "w-12 bg-[#f2f1e9]": "w-3 bg-[#6f9f93]/35 hover:bg-[#8fc9c5]/70"
                 }`}
                 aria-label={`Перейти к баннеру ${dotIndex + 1}`}
               />
             ))}
           </div>
-        ) : null}</div>
+        ) : null}
+      </div>
 
       <AnimatePresence>
         {isPreviewOpen ? (
           <motion.div
-            className="fixed inset-0 z-[200] flex items-center justify-center bg-black/85 p-6"
+            className="fixed inset-0 z-[300] flex items-center justify-center bg-black/85 p-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -134,7 +142,7 @@ export function BannerSlider({ banners }: { banners: Banner[] }) {
             />
 
             <motion.div
-              className="relative z-[201] flex max-h-[92vh] w-full max-w-[1800px] items-center justify-center rounded-[28px] border border-[rgba(143,201,197,0.2)] bg-[rgba(8,24,21,0.96)] p-4 shadow-[0_30px_80px_rgba(0,0,0,0.45)]"
+              className="relative z-[301] flex max-h-[92vh] w-full max-w-[1800px] items-center justify-center rounded-[28px] border border-[rgba(143,201,197,0.2)] bg-[rgba(8,24,21,0.96)] p-4 shadow-[0_30px_80px_rgba(0,0,0,0.45)]"
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
@@ -143,7 +151,7 @@ export function BannerSlider({ banners }: { banners: Banner[] }) {
               <button
                 type="button"
                 onClick={() => setIsPreviewOpen(false)}
-                className="absolute right-4 top-4 z-[202] flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-black/45 text-3xl leading-none text-white transition hover:bg-black/65"
+                className="absolute right-4 top-4 z-[302] flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-black/45 text-3xl leading-none text-white transition hover:bg-black/65"
                 aria-label="Закрыть"
               >
                 ×
