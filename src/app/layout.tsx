@@ -27,7 +27,7 @@ export default function RootLayout({
           <ScrollToTop />
           <Header />
 
-          <div className="kiosk-container flex-1 py-8">
+          <div className="kiosk-container flex-1 py-8 pt-[220px]">
             <main className="flex h-full flex-col">{children}</main>
           </div>
 
