@@ -14,6 +14,8 @@
   --text-muted: #8fb6ae;
   --accent: #67d2c0;
   --accent-soft: rgba(103, 210, 192, 0.18);
+
+  --header-height: 180px;
 }
 
 html,

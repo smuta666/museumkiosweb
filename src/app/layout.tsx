@@ -27,7 +27,10 @@ export default function RootLayout({
           <ScrollToTop />
           <Header />
 
-          <div className="kiosk-container flex-1 pt-[100px] pb-8">
+          <div
+            className="kiosk-container flex-1 pb-8"
+            style={{ paddingTop: "calc(var(--header-height) + 24px)" }}
+          >
             <main className="flex h-full flex-col">{children}</main>
           </div>
 

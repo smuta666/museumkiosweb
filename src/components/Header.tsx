@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 function formatDate(date: Date) {
   return date.toLocaleDateString("ru-RU", {
@@ -17,10 +17,26 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const [now, setNow] = useState(new Date());
+  const headerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const id = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      if (!headerRef.current) return;
+      const height = headerRef.current.offsetHeight;
+      document.documentElement.style.setProperty("--header-height", `${height}px`);
+    };
+
+    updateHeaderHeight();
+    window.addEventListener("resize", updateHeaderHeight);
+
+    return () => {
+      window.removeEventListener("resize", updateHeaderHeight);
+    };
   }, []);
 
   const time = useMemo(
@@ -29,11 +45,14 @@ export default function Header() {
         hour: "2-digit",
         minute: "2-digit",
       }),
-    [now],
+    [now]
   );
 
   return (
-    <header className="kiosk-divider sticky left-0 right-0 top-0 z-[100] bg-[rgba(3,20,17,0.94)] backdrop-blur-xl">
+    <header
+      ref={headerRef}
+      className="kiosk-divider fixed left-0 right-0 top-0 z-30 bg-[rgba(3,20,17,0.94)] backdrop-blur-xl"
+    >
       <div className="kiosk-container flex items-center justify-between gap-8 py-6">
         <div>
           <div className="kiosk-title-overline">Алупкинский музей-заповедник</div>
@@ -53,12 +72,9 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="flex flex-col items-end gap-3 ml-6">
+          <div className="ml-6 flex flex-col items-end gap-3">
             {pathname !== "/" && (
-              <Link
-                href="/"
-                className="kiosk-button min-w-[160px] text-[22px]"
-              >
+              <Link href="/" className="kiosk-button min-w-[160px] text-[22px]">
                 Главная
               </Link>
             )}
