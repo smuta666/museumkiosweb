@@ -32,7 +32,7 @@ export default function ParkHistoryPage() {
 
       <div className="mb-8 overflow-hidden rounded-[32px] border border-[#2c5a4d] bg-[#0c2a24]/95 shadow-[0_25px_60px_rgba(0,0,0,0.35)]">
         <div className="flex gap-6 overflow-x-auto bg-[#071a17] p-6">
-          {['/static/park/park-main.svg', '/static/park/park-2.svg', '/static/park/park-3.svg'].map((src) => (
+          {['/static/park/hpark1.jpg', '/static/park/hpark2.jpg', '/static/park/hpark3.jpg', '/static/park/hpark4.jpg'].map((src) => (
             <img key={src} src={src} alt="Алупкинский парк" className="h-[320px] rounded-[24px] object-cover shadow-[0_10px_30px_rgba(0,0,0,0.3)]" />
           ))}
         </div>
