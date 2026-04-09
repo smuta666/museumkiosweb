@@ -9,7 +9,7 @@ export async function GET(
   try {
     const { path: parts } = await context.params;
 
-    const uploadDir = process.env.UPLOAD_DIR || "public/uploads";
+    const uploadDir = process.env.UPLOAD_DIR || "/data/uploads";
     const filePath = path.join(process.cwd(), uploadDir, ...parts);
 
     if (!fs.existsSync(filePath)) {

@@ -29,7 +29,7 @@ export async function POST(req: Request) {
     const buffer = Buffer.from(bytes);
 
     const safeFileName = `${Date.now()}-${file.name.replace(/\s+/g, "-")}`;
-    const uploadDir = process.env.UPLOAD_DIR || "public/uploads";
+    const uploadDir = process.env.UPLOAD_DIR || "/data/uploads";
 
     const filePath = path.join(process.cwd(), uploadDir, safeFileName);
 
