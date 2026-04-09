@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import { Footer } from "../components/footer";
 import ScrollToTop from "../components/ScrollToTop";
 import KioskLock from "../components/KioskLock";
+import IdleReset from "../components/IdleReset";
 
 export const metadata: Metadata = {
   title: "Museum Kiosk Web",
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className="min-h-screen">
+        <IdleReset />
         <KioskLock />
         <div className="kiosk-shell flex min-h-screen flex-col">
           <ScrollToTop />
