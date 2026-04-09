@@ -42,7 +42,7 @@ export default function HoursPage() {
               </div>
               <div className="relative shrink-0 rounded-[28px] border border-[#4b7b6c] bg-[linear-gradient(180deg,#12342d,#0f2d27)] px-8 py-7 text-center shadow-[0_12px_30px_rgba(0,0,0,0.25)]">
                 <div className="text-sm uppercase tracking-[0.22em] text-[#8fc9c5]">Время</div>
-                <div className="mt-3 text-5xl font-bold text-[#f2f1e9]">{item.value}</div>
+                <div className="mt-3 text-2xl font-bold text-[#f2f1e9]">{item.value}</div>
               </div>
             </div>
           </div>
