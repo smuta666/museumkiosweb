@@ -29,7 +29,7 @@ export default function PdfViewerPage({
 
       <section className="overflow-hidden rounded-[30px] border border-[#2c5a4d] bg-[#0c2a24]/95 shadow-[0_18px_40px_rgba(0,0,0,0.28)]">
         <iframe
-          src={pdfUrl}
+          src={`${pdfUrl}#toolbar=0&navpanes=0&scrollbar=0`}
           className="h-[78vh] w-full bg-white"
           title={title}
         />
