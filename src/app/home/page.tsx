@@ -64,6 +64,30 @@ export default async function HomePage() {
       gradient:
         "bg-[linear-gradient(135deg,rgba(33,102,92,0.96),rgba(49,133,120,0.92))]",
     },
+    {
+      href: "/visit-rules",
+      title: "Правила посещения",
+      subtitle: "Официальные правила посещения музея",
+      caption: "Документ",
+      gradient:
+        "bg-[linear-gradient(135deg,rgba(33,102,92,0.96),rgba(49,133,120,0.92))]",
+    },
+    {
+      href: "/photo-video",
+      title: "Фото и видеосъемка",
+      subtitle: "Порядок фото- и видеосъемки",
+      caption: "Документ",
+      gradient:
+        "bg-[linear-gradient(135deg,rgba(33,102,92,0.96),rgba(49,133,120,0.92))]",
+    },
+    {
+      href: "/museum-price",
+      title: "Стоимость посещения",
+      subtitle: "Актуальная стоимость билетов",
+      caption: "Документ",
+      gradient:
+        "bg-[linear-gradient(135deg,rgba(33,102,92,0.96),rgba(49,133,120,0.92))]",
+    },
   ];
 
   return (
