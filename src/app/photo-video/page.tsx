@@ -7,7 +7,7 @@ export default function PhotoVideoPage() {
     <PdfViewerPage
       overline="Документ"
       title="Фото и видеосъемка"
-      description="Порядок рассмотрения фото- и видеосъемки на территории музея."
+      description="Порядок рассмотрения фото и видеосъемки на территории музея."
       pdfUrl="/docs/photo-video.pdf"
     />
   );
